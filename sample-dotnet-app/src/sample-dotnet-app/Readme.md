@@ -30,13 +30,18 @@ Install Amazon.Lambda.Tools Global Tools if not already installed.
 ```
     dotnet tool install -g Amazon.Lambda.Tools
 ```
+AKIAVFMWYT323WH3U56P
+
+S&)Pa8wCJ7y)2TR1|myg
 
 If already installed check if new version is available.
 ```
     dotnet tool update -g Amazon.Lambda.Tools
 ```
-
+Tcl1h/ejZ9eEat8Q1Ard4oEJFJSPbsw+2BR0GoUw
 Execute unit tests
+
+355187859189
 ```
     cd "sample-dotnet-app/test/sample-dotnet-app.Tests"
     dotnet test
@@ -46,4 +51,3 @@ Deploy function to AWS Lambda
 ```
     cd "sample-dotnet-app/src/sample-dotnet-app"
     dotnet lambda deploy-function
-```
