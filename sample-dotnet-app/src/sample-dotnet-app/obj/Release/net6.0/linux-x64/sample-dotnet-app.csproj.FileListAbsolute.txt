@@ -1,0 +1,17 @@
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/sample-dotnet-app.deps.json
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/sample-dotnet-app.runtimeconfig.json
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/sample-dotnet-app.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/sample-dotnet-app.pdb
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/Amazon.Lambda.Core.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/linux-x64/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.csproj.AssemblyReference.cache
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.AssemblyInfoInputs.cache
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.AssemblyInfo.cs
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.csproj.CoreCompileInputs.cache
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.csproj.CopyComplete
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/refint/sample-dotnet-app.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.pdb
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/sample-dotnet-app.genruntimeconfig.cache
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/obj/Release/net6.0/linux-x64/ref/sample-dotnet-app.dll

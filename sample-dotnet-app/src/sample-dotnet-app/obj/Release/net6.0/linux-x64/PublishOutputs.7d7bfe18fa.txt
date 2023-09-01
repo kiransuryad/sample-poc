@@ -1,0 +1,6 @@
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/sample-dotnet-app.deps.json
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/sample-dotnet-app.runtimeconfig.json
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/sample-dotnet-app.pdb
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/Amazon.Lambda.Core.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/bin/Release/net6.0/publish/sample-dotnet-app.dll

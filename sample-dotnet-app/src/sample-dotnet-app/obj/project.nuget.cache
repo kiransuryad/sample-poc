@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "yZ656d7i/LG12L657grRMaeAeKyb8aPtmXTpVIoUuFyQhhQlwub4o24wfSH+KyExurE6p8cEcxWTTItlsc632A==",
+  "success": true,
+  "projectFilePath": "/Users/kirangonela/myProjects/poc-s3-lambda/sample-dotnet-app/src/sample-dotnet-app/sample-dotnet-app.csproj",
+  "expectedPackageFiles": [
+    "/Users/kirangonela/.nuget/packages/amazon.lambda.core/2.1.0/amazon.lambda.core.2.1.0.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.3.1/amazon.lambda.serialization.systemtextjson.2.3.1.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/microsoft.netcore.app.ref/6.0.21/microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/6.0.21/microsoft.netcore.app.runtime.linux-x64.6.0.21.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.21/microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/6.0.21/microsoft.aspnetcore.app.runtime.linux-x64.6.0.21.nupkg.sha512",
+    "/Users/kirangonela/.nuget/packages/microsoft.netcore.app.crossgen2.osx-x64/6.0.21/microsoft.netcore.app.crossgen2.osx-x64.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}
