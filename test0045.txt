@@ -1,0 +1,29 @@
+# Define the connection parameters
+$serverName = "your-rds-endpoint.rds.amazonaws.com"
+$port = 5432  # Default PostgreSQL port; adjust if needed
+$databaseName = "postgres"  # Default database to connect for creation
+$username = "your_username"
+$password = "your_password"
+
+# SQL command to create a new database
+$newDatabaseName = "my_new_database"
+$sqlCommand = "CREATE DATABASE [$newDatabaseName];"
+
+# Create a connection string
+$connectionString = "Server=$serverName,$port;Database=$databaseName;User Id=$username;Password=$password;"
+
+# Execute the SQL command
+try {
+    Write-Host "Connecting to RDS instance and creating the database..."
+
+    # Load SQL Server module
+    Import-Module SqlServer -ErrorAction Stop
+
+    # Execute SQL command
+    Invoke-Sqlcmd -ConnectionString $connectionString -Query $sqlCommand -ErrorAction Stop
+
+    Write-Host "Database '$newDatabaseName' created successfully."
+}
+catch {
+    Write-Error "An error occurred: $_"
+}
