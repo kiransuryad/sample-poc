@@ -9,6 +9,95 @@ $username = "your_username"
 $password = "your_password"
 $newDatabaseName = "my_new_database"
 
+# Function to check if `psql` is available
+function Test-PsqlInstalled {
+    try {
+        $psqlPath = "C:\PostgreSQL\pgsql\bin\psql.exe"
+        if (Test-Path $psqlPath) {
+            return $true
+        }
+        return $false
+    } catch {
+        return $false
+    }
+}
+
+# Download and install PostgreSQL if `psql` is not installed
+if (-not (Test-PsqlInstalled)) {
+    Write-Host "Downloading PostgreSQL client tools..."
+    Invoke-WebRequest -Uri $postgresqlUrl -OutFile $downloadPath
+
+    Write-Host "Extracting PostgreSQL client tools..."
+    Expand-Archive -Path $downloadPath -DestinationPath $installPath -Force
+
+    Write-Host "Updating PATH environment variable..."
+    $env:Path += ";$installPath\pgsql\bin"
+
+    Write-Host "Verifying psql installation..."
+    if (-not (Test-PsqlInstalled)) {
+        Write-Error "PostgreSQL client tools installation failed. `psql` not found."
+        exit 1
+    }
+} else {
+    Write-Host "PostgreSQL client tools already installed."
+}
+
+# Verify `psql` installation
+Write-Host "psql version:"
+& "C:\PostgreSQL\pgsql\bin\psql.exe" --version
+
+# Create the SQL command to execute
+$sqlCommand = "CREATE DATABASE $newDatabaseName;"
+
+# Create a temp SQL file
+$tempSqlFile = [System.IO.Path]::GetTempFileName()
+Set-Content -Path $tempSqlFile -Value $sqlCommand
+
+# Build the psql command
+$psqlCommand = "psql -h $serverName -p $port -U $username -d $databaseName -f $tempSqlFile"
+
+# Set environment variable for password
+$env:PGPASSWORD = $password
+
+# Execute the psql command
+try {
+    Write-Host "Connecting to RDS instance and creating the database..."
+
+    # Execute the psql command and capture output
+    $output = Invoke-Expression -Command $psqlCommand 2>&1
+
+    # Check if command was successful
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "Database '$newDatabaseName' created successfully."
+    } else {
+        Write-Error "Database creation failed. Output: $output"
+        exit 1
+    }
+}
+catch {
+    Write-Error "An error occurred: $_"
+    exit 1
+}
+finally {
+    # Clean up
+    Remove-Item -Path $tempSqlFile -ErrorAction SilentlyContinue
+    Remove-Item -Path $downloadPath -Force
+    Write-Host "Clean up completed."
+}
+
+
+---
+# Define variables
+$postgresqlUrl = "https://get.enterprisedb.com/postgresql/postgresql-15.2-1-windows-x64-binaries.zip"
+$downloadPath = "$env:TEMP\postgresql.zip"
+$installPath = "C:\PostgreSQL"
+$serverName = "your-rds-endpoint.rds.amazonaws.com"
+$port = 5432
+$databaseName = "postgres"
+$username = "your_username"
+$password = "your_password"
+$newDatabaseName = "my_new_database"
+
 # Download PostgreSQL ZIP file
 Write-Host "Downloading PostgreSQL client tools..."
 Invoke-WebRequest -Uri $postgresqlUrl -OutFile $downloadPath
