@@ -1,3 +1,61 @@
+# Define variables
+$postgresqlUrl = "https://get.enterprisedb.com/postgresql/postgresql-15.2-1-windows-x64-binaries.zip"
+$downloadPath = "$env:TEMP\postgresql.zip"
+$installPath = "C:\PostgreSQL"
+$serverName = "your-rds-endpoint.rds.amazonaws.com"
+$port = 5432
+$databaseName = "postgres"
+$username = "your_username"
+$password = "your_password"
+$newDatabaseName = "my_new_database"
+
+# Download PostgreSQL ZIP file
+Write-Host "Downloading PostgreSQL client tools..."
+Invoke-WebRequest -Uri $postgresqlUrl -OutFile $downloadPath
+
+# Extract ZIP file
+Write-Host "Extracting PostgreSQL client tools..."
+Expand-Archive -Path $downloadPath -DestinationPath $installPath -Force
+
+# Add PostgreSQL `bin` directory to the PATH
+Write-Host "Updating PATH environment variable..."
+$env:Path += ";$installPath\pgsql\bin"
+
+# Verify `psql` installation
+Write-Host "Verifying psql installation..."
+psql --version
+
+# Create the SQL command to execute
+$sqlCommand = "CREATE DATABASE $newDatabaseName;"
+
+# Create a temp SQL file
+$tempSqlFile = [System.IO.Path]::GetTempFileName()
+Set-Content -Path $tempSqlFile -Value $sqlCommand
+
+# Build the psql command
+$psqlCommand = "psql -h $serverName -p $port -U $username -d $databaseName -f $tempSqlFile"
+
+# Set environment variable for password
+$env:PGPASSWORD = $password
+
+# Execute the psql command
+try {
+    Write-Host "Connecting to RDS instance and creating the database..."
+    Invoke-Expression -Command $psqlCommand
+    Write-Host "Database '$newDatabaseName' created successfully."
+}
+catch {
+    Write-Error "An error occurred: $_"
+}
+finally {
+    # Clean up
+    Remove-Item -Path $tempSqlFile -ErrorAction SilentlyContinue
+    Remove-Item -Path $downloadPath -Force
+    Write-Host "Clean up completed."
+}
+
+
+---
 # Define the connection parameters
 $serverName = "your-rds-endpoint.rds.amazonaws.com"
 $port = 5432  # Default PostgreSQL port; adjust if needed
